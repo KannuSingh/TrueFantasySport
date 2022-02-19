@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">True Fantasy Sport</string>
+    <string name="btn_create_new_wallet">Create New Wallet</string>
+
+    <string name="btn_setup_new_wallet">Setup New Wallet</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="app_title">TRUE FANTASY SPORTS</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="enter_wallet_password">Enter Wallet Password</string>
+    <string name="enter_account_name">Enter Account Name</string>
+</resources>

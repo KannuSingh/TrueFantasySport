@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/walletSetupFragment">
+
+    <fragment
+        android:id="@+id/createWalletFormFragment"
+        android:name="com.kd.truefantasysport.CreateWalletFormFragment"
+        android:label="Create Wallet"
+        tools:layout="@layout/fragment_create_wallet_form" />
+    <fragment
+        android:id="@+id/walletSetupFragment"
+        android:name="com.kd.truefantasysport.WalletSetupFragment"
+        android:label="@string/app_title"
+        tools:layout="@layout/fragment_wallet_setup" >
+        <action
+            android:id="@+id/action_walletSetupFragment_to_createWalletFormFragment"
+            app:destination="@id/createWalletFormFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.kd.truefantasysport.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
+</navigation>
