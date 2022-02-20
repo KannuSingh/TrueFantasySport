@@ -1,12 +1,15 @@
 package com.kd.truefantasysport
 
 import android.os.Bundle
+import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.kd.truefantasysport.databinding.FragmentWalletSetupBinding
+import com.kd.truefantasysport.viewmodels.NewWalletViewModel
 
 
 class WalletSetupFragment : Fragment() {

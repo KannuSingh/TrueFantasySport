@@ -9,7 +9,11 @@
         android:id="@+id/createWalletFormFragment"
         android:name="com.kd.truefantasysport.CreateWalletFormFragment"
         android:label="Create Wallet"
-        tools:layout="@layout/fragment_create_wallet_form" />
+        tools:layout="@layout/fragment_create_wallet_form" >
+        <action
+            android:id="@+id/action_createWalletFormFragment_to_displayMnemonicFragment"
+            app:destination="@id/displayMnemonicFragment" />
+    </fragment>
     <fragment
         android:id="@+id/walletSetupFragment"
         android:name="com.kd.truefantasysport.WalletSetupFragment"
@@ -24,4 +28,9 @@
         android:name="com.kd.truefantasysport.AboutFragment"
         android:label="fragment_about"
         tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/displayMnemonicFragment"
+        android:name="com.kd.truefantasysport.DisplayMnemonicFragment"
+        android:label="fragment_display_mnemonic"
+        tools:layout="@layout/fragment_display_mnemonic" />
 </navigation>

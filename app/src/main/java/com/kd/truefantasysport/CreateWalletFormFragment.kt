@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import com.kd.truefantasysport.databinding.FragmentCreateWalletFormBinding
 import com.kd.truefantasysport.viewmodels.NewWalletViewModel
 import org.web3j.crypto.WalletUtils
@@ -28,10 +29,11 @@ class CreateWalletFormFragment : Fragment() {
             R.layout.fragment_create_wallet_form,container,false)
 
         Log.i("CreateWalletFormFragmen", "Called ViewModelProvider.get")
-        viewModel = ViewModelProvider(this).get(NewWalletViewModel::class.java)
+        viewModel = ViewModelProvider(requireActivity()).get(NewWalletViewModel::class.java)
 
         binding.createNewWallet.setOnClickListener {
             createNewWallet();
+            it.findNavController().navigate(R.id.action_createWalletFormFragment_to_displayMnemonicFragment)
         }
         return binding.root
 
@@ -41,8 +43,12 @@ class CreateWalletFormFragment : Fragment() {
     private fun createNewWallet() {
         val accountName = binding.inpAccountName.text.toString()
         val walletPassword = binding.inpWalletPassword.text.toString()
-        if(viewModel.createNewWallet(accountName,walletPassword)){
+
+        if(viewModel.createNewBip39Wallet(accountName,walletPassword)){
             Toast.makeText(context, "Wallet Created Successfull",Toast.LENGTH_SHORT).show()
+            val mnemonic = viewModel.getBip39Wallet().mnemonic
+           // Toast.makeText(context, mnemonic,Toast.LENGTH_SHORT).show()
+
         }
         else{
             Toast.makeText(context, "Wallet Creation Failed",Toast.LENGTH_SHORT).show()
