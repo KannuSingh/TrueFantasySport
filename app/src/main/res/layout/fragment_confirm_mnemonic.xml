@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ConfirmMnemonicFragment">
+
+    <data>
+
+        <import type="androidx.databinding.ObservableArrayList" />
+
+
+        <variable
+            name="inputMnemonic"
+            type="ObservableArrayList&lt;String&gt;" />
+
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/app_background_color">
+
+        <TextView
+            android:id="@+id/heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp"
+            android:text="@string/heading_confirm_the_recovery_secret_phrase"
+            android:textColor="@color/app_secondary_text"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/sub_heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:lines="2"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp"
+            android:text="@string/subheading_confirm_recovery_phrase"
+            android:textColor="@color/app_secondary_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/heading" />
+
+
+        <TableLayout
+            android:id="@+id/display_mnemonic_table_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="8dp"
+            android:stretchColumns="*"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sub_heading"
+
+            >
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginVertical="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/white_rectangle_border"
+                    android:gravity="center"
+                    android:paddingVertical="8dp"
+                    android:text='@{inputMnemonic[0]}'
+                    android:textColor="@color/app_primary_text" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginVertical="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/white_rectangle_border"
+                    android:gravity="center"
+                    android:paddingVertical="8dp"
+                    android:text='@{inputMnemonic[1]}'
+                    android:textColor="@color/app_primary_text" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginVertical="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/white_rectangle_border"
+                    android:gravity="center"
+                    android:paddingVertical="8dp"
+                    android:text='@{inputMnemonic[2]}'
+                    android:textColor="@color/app_primary_text" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginVertical="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/white_rectangle_border"
+                    android:gravity="center"
+                    android:paddingVertical="8dp"
+                    android:text='@{inputMnemonic[3]}'
+                    android:textColor="@color/app_primary_text" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginVertical="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/white_rectangle_border"
+                    android:gravity="center"
+                    android:paddingVertical="8dp"
+                    android:text='@{inputMnemonic[4]}'
+                    android:textColor="@color/app_primary_text" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginVertical="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/white_rectangle_border"
+                    android:gravity="center"
+                    android:paddingVertical="8dp"
+                    android:text='@{inputMnemonic[5]}'
+                    android:textColor="@color/app_primary_text" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginVertical="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/white_rectangle_border"
+                    android:gravity="center"
+                    android:paddingVertical="8dp"
+                    android:text='@{inputMnemonic[6]}'
+                    android:textColor="@color/app_primary_text" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginVertical="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/white_rectangle_border"
+                    android:gravity="center"
+                    android:paddingVertical="8dp"
+                    android:text='@{inputMnemonic[7]}'
+                    android:textColor="@color/app_primary_text" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginVertical="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/white_rectangle_border"
+                    android:gravity="center"
+                    android:paddingVertical="8dp"
+                    android:text='@{inputMnemonic[8]}'
+                    android:textColor="@color/app_primary_text" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginVertical="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/white_rectangle_border"
+                    android:gravity="center"
+                    android:paddingVertical="8dp"
+                    android:text='@{inputMnemonic[9]}'
+                    android:textColor="@color/app_primary_text" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginVertical="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/white_rectangle_border"
+                    android:gravity="center"
+                    android:paddingVertical="8dp"
+                    android:text='@{inputMnemonic[10]}'
+                    android:textColor="@color/app_primary_text" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginVertical="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/white_rectangle_border"
+                    android:gravity="center"
+                    android:paddingVertical="8dp"
+                    android:text='@{inputMnemonic[11]}'
+                    android:textColor="@color/app_primary_text" />
+            </TableRow>
+
+        </TableLayout>
+
+
+        <TableLayout
+            android:id="@+id/display_mnemonic_random_table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="8dp"
+            android:stretchColumns="*"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/display_mnemonic_table_form">
+
+
+        </TableLayout>
+
+        <Button
+            android:id="@+id/btn_check_input_mnemonic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="32dp"
+            android:backgroundTint="@color/app_blue"
+            android:text='Next'
+            android:textColor="@color/app_primary_text"
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/display_mnemonic_random_table" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

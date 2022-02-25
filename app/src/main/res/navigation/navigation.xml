@@ -32,5 +32,23 @@
         android:id="@+id/displayMnemonicFragment"
         android:name="com.kd.truefantasysport.DisplayMnemonicFragment"
         android:label="fragment_display_mnemonic"
-        tools:layout="@layout/fragment_display_mnemonic" />
+        tools:layout="@layout/fragment_display_mnemonic" >
+        <action
+            android:id="@+id/action_displayMnemonicFragment_to_confirmMnemonicFragment"
+            app:destination="@id/confirmMnemonicFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmMnemonicFragment"
+        android:name="com.kd.truefantasysport.ConfirmMnemonicFragment"
+        android:label="fragment_confirm_mnemonic"
+        tools:layout="@layout/fragment_confirm_mnemonic" >
+        <action
+            android:id="@+id/action_confirmMnemonicFragment_to_walletCreationFinishFragment"
+            app:destination="@id/walletCreationFinishFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/walletCreationFinishFragment"
+        android:name="com.kd.truefantasysport.WalletCreationFinishFragment"
+        android:label="fragment_wallet_creation_finish"
+        tools:layout="@layout/fragment_wallet_creation_finish" />
 </navigation>

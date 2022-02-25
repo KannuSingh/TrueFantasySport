@@ -1,5 +1,6 @@
 package com.kd.truefantasysport
 
+import android.content.res.Resources
 import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
@@ -10,13 +11,16 @@ import android.view.ViewGroup
 import android.widget.TableRow
 import android.widget.TextView
 import androidx.core.content.res.ResourcesCompat
-import androidx.core.view.marginBottom
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
-import com.kd.truefantasysport.R.drawable.rectangle_border
-import com.kd.truefantasysport.databinding.FragmentCreateWalletFormBinding
+import androidx.navigation.findNavController
+import com.kd.truefantasysport.R.drawable.blue_rectangle_border
 import com.kd.truefantasysport.databinding.FragmentDisplayMnemonicBinding
 import com.kd.truefantasysport.viewmodels.NewWalletViewModel
+import android.util.TypedValue
+
+
+
 
 /**
  * A simple [Fragment] subclass.
@@ -37,10 +41,13 @@ class DisplayMnemonicFragment : Fragment() {
     ): View? {
         binding = DataBindingUtil.inflate<FragmentDisplayMnemonicBinding>(inflater,
             R.layout.fragment_display_mnemonic,container,false)
-        Log.i("CreateWalletFormFragmen", "Called ViewModelProvider.get")
+        //Log.i("CreateWalletFormFragmen", "Called ViewModelProvider.get")
         viewModel = ViewModelProvider(requireActivity()).get(NewWalletViewModel::class.java)
 
         createMnemonicTable(viewModel.bip39Wallet.mnemonic)
+        binding.btnDisplayMnemonicNext.setOnClickListener {
+            it.findNavController().navigate(R.id.action_displayMnemonicFragment_to_confirmMnemonicFragment)
+        }
         // Inflate the layout for this fragment
         return binding.root
     }
@@ -58,8 +65,8 @@ class DisplayMnemonicFragment : Fragment() {
                     TableRow.LayoutParams.MATCH_PARENT,
                     TableRow.LayoutParams.WRAP_CONTENT
                 )
-                tableRows[i]!!.weightSum = 3.0f
-                tableRows[i]!!.setPadding(8, 8, 8, 8)
+
+              //  tableRows[i]!!.setPadding(8, 8, 8, 8)
                 Log.i("DisplayMnemonicFragment", "${i*3} : ${(i*3)+1} : ${(i*3)+2}")
                 tableRows[i]!!.addView(getNewCustomTextItem("${(i*3)+1} : ${mnemonicArray[(i*3)]}"))
                 tableRows[i]!!.addView(getNewCustomTextItem("${(i*3)+2} : ${mnemonicArray[(i*3)+1]}"))
@@ -76,16 +83,29 @@ class DisplayMnemonicFragment : Fragment() {
     private fun getNewCustomTextItem(s: String) : TextView{
         var textView = TextView(context)
         var layoutParam = TableRow.LayoutParams(
-            TableRow.LayoutParams.WRAP_CONTENT,
+            0,
             TableRow.LayoutParams.WRAP_CONTENT, 1.0f
         )
-        layoutParam.setMargins(16,8,16,8)
+        val dp16 = convertDpToPx(16.0f)
+        val dp08 = convertDpToPx(8.0f)
+        val dp00 = convertDpToPx(0.0f)
+        layoutParam.setMargins(dp16,dp08,dp16,dp08)
         textView.layoutParams =layoutParam
-        textView.background = ResourcesCompat.getDrawable(context!!.resources,R.drawable.rectangle_border,context!!.theme)
-        textView.setPadding(8,8,8,8)
+        textView.background = ResourcesCompat.getDrawable(context!!.resources,R.drawable.blue_rectangle_border,context!!.theme)
+        textView.setPadding(dp00,dp08,dp00,dp08)
+        textView.setTextColor(ResourcesCompat.getColor(context!!.resources,R.color.app_primary_text,context!!.theme))
         textView.gravity = Gravity.CENTER
         textView.text = s
         return textView;
+    }
+
+    private fun convertDpToPx(value: Float): Int {
+        val r: Resources = context!!.getResources()
+        return TypedValue.applyDimension(
+            TypedValue.COMPLEX_UNIT_DIP,
+            value,
+            r.displayMetrics
+        ).toInt()
     }
 
 

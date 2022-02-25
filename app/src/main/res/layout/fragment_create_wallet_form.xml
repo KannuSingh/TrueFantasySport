@@ -30,7 +30,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="8dp"
                 android:text="@string/enter_account_name"
-                android:textColor="@color/app_primary_text_color" />
+                android:textColor="@color/app_secondary_text" />
 
 
             <com.google.android.material.textfield.TextInputLayout
@@ -43,15 +43,13 @@
                 app:boxCornerRadiusTopStart="10dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="8dp"
-                app:boxStrokeColor="@color/app_border_color">
+                app:boxStrokeColor="@color/app_secondary_text">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/inp_account_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text"
-                    android:textColorHighlight="@color/app_primary_text_color"
-                    android:hint="Account Name" />
+                    android:inputType="text"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -61,7 +59,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="8dp"
                 android:text="@string/enter_wallet_password"
-                android:textColor="@color/app_primary_text_color" />
+                android:textColor="@color/app_secondary_text" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -71,15 +69,15 @@
                 app:boxCornerRadiusBottomStart="10dp"
                 app:boxCornerRadiusTopEnd="10dp"
                 app:boxCornerRadiusTopStart="10dp"
-                app:boxStrokeColor="@color/app_border_color">
+                app:boxStrokeColor="@color/app_secondary_text">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/inp_wallet_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
-                    android:textColorHighlight="@color/app_primary_text_color"
-                    android:hint="Password" />
+                    android:textColor="@color/app_primary_text"
+                    />
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -90,9 +88,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:backgroundTint="@color/secondary_color"
+            android:backgroundTint="@color/app_blue"
             android:text="Create"
-            android:textColor="@color/app_primary_text_color"
+            android:textColor="@color/app_primary_text"
             app:cornerRadius="10dp"
             android:layout_marginEnd="40dp"
             android:layout_marginStart="40dp"

@@ -8,8 +8,13 @@
     <!-- TODO: Remove or change this placeholder text -->
 
     <string name="enter_wallet_password">Enter Wallet Password</string>
-    <string name="enter_account_name">Enter Account Name</string>
+    <string name="enter_account_name">Name Your Account</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="imp_secret_phrase_msg">This is your secret recovery phrase. Write is down on a piece of paper and keep it in the safe place. You will be prompted to enter this phrase again (in the correct order) in the next step.</string>
+    <string name="heading_confirm_the_recovery_secret_phrase">Confirm the recovery secret phrase</string>
+    <string name="subheading_confirm_recovery_phrase">Select each word in the order in which it was shown to you</string>
+    <string name="wallet_created_message">You have successfully protected your wallet. Keep your recovery passphrase safe. This is your responsibility!</string>
+    <string name="finish">Finish</string>
+    <string name="done">Done</string>
 </resources>
